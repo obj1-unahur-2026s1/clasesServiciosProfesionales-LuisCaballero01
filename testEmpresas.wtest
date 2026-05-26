@@ -1,0 +1,31 @@
+import empresas.*
+import profesionales.*
+import universidades.*
+
+describe "group of tests for pepita" {
+    method initialize() {
+      empresa.contratarProfesionales([juana, melina, rocio, luciana])
+    }
+    test "Dos profesionales estudiaron en uniRosario" {
+        assert.equals(2, empresa.cuantosEstudiaronEn(uniRosario))
+    }
+    test "Un profesional estudio en uniHurlingham" {
+        assert.equals(1, empresa.cuantosEstudiaronEn(uniHurlingham))
+    }
+    test "Ningun profesional estudio en uniSanMartin" {
+        assert.equals(0, empresa.cuantosEstudiaronEn(uniSanMartin))
+    }
+
+    test "Rocio es el unico profesional caro"{
+        assert.equals([rocio], empresa.profesionalesCaros())
+    }
+    test "Las universidades formadoras son uniRosario, uniCorrientes y uniHurlingham" {
+        assert.equals([uniRosario, uniCorrientes, uniHurlingham], empresa.universidadesFormadoras())
+    }
+    test "Juana es la más barata"{
+        assert.equals(juana, empresa.profesionalMasBarato())
+    }
+    test "La empresa no es de gente acotada"{
+        assert.notThat(empresa.esDeGenteAcotada())
+    }
+}
