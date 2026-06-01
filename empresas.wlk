@@ -1,8 +1,8 @@
 import profesionales.*
-object empresa{
+class Empresa{
     const profesionales = []
     
-    method honorarioPreferencia() = 3500
+    const property honorarioPreferencia
 
     method cuantosEstudiaronEn(unaUni) = profesionales.count({p => p.universidad() == unaUni})
     method profesionalesCaros() = profesionales.filter({p => p.honorarios() > self.honorarioPreferencia()}).withoutDuplicates()
@@ -18,3 +18,4 @@ object empresa{
         listaDeProfesionales.forEach({p => self.contratar(p)})
     }
 }
+object laSerenisima inherits Empresa(honorarioPreferencia = 3500){} 
