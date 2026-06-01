@@ -9,6 +9,7 @@ object empresa{
     method universidadesFormadoras() = profesionales.map({p => p.universidad()}).withoutDuplicates()
     method profesionalMasBarato() = profesionales.min({p => p.honorarios()})
     method esDeGenteAcotada() = profesionales.all({p => p.puedeTrabajarEn().size() <= 3})
+    method puedeSatisfacerA(unSolicitante) = profesionales.any({p => unSolicitante.puedeSerAtendidoPor(p)})
 
     method contratar(unProfesional){
         profesionales.add(unProfesional)
@@ -16,5 +17,4 @@ object empresa{
     method contratarProfesionales(listaDeProfesionales){
         listaDeProfesionales.forEach({p => self.contratar(p)})
     }
-
 }
