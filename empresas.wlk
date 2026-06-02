@@ -11,8 +11,12 @@ class Empresa{
     method esDeGenteAcotada() = profesionales.all({p => p.puedeTrabajarEn().size() <= 3}) //testeado
     method puedeSatisfacerA(unSolicitante) = profesionales.any({p => unSolicitante.puedeSerAtendidoPor(p)})
     method algunoQuePuedeSatisfacerA(unSolicitante) = profesionales.filter({p => unSolicitante.puedeSerAtendidoPor(p)}).anyOne()
+// Parte 4
     method cantidadClientes() = clientes.size()
     method esCliente(unSolicitante) = clientes.contains(unSolicitante)
+// Desafío final
+    method esPocoAtractivo(unProfesional) = profesionales.any({p => p.universidad() == unProfesional.universidad() && p.honorarios() < unProfesional.honorarios()})
+    
     
     method contratar(unProfesional){
         profesionales.add(unProfesional)
