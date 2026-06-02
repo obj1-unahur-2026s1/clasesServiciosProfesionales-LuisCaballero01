@@ -1,16 +1,8 @@
-object uniSanMartin{
-    const property provincia = "Buenos Aires"
-    const property honorariosRecomendados = 3500
+class Universidad{
+    const property provincia
+    const property honorariosRecomendados
 }
-object uniRosario{
-    const property provincia = "Santa Fe"
-    const property honorariosRecomendados = 2800
-}
-object uniCorrientes{
-    const property provincia = "Corrientes"
-    const property honorariosRecomendados = 4200
-}
-object uniHurlingham{
-    const property provincia = "Buenos Aires"
-    const property honorariosRecomendados = 8800
-}
+const uniSanMartin = new Universidad(provincia = "Buenos Aires", honorariosRecomendados = 3500)
+const uniRosario = new Universidad(provincia = "Santa Fe", honorariosRecomendados = 2800)
+const uniCorrientes = new Universidad(provincia = "Corrientes", honorariosRecomendados = 4200)
+const uniHurlingham = new Universidad(provincia = "Buenos Aires", honorariosRecomendados = 8800)

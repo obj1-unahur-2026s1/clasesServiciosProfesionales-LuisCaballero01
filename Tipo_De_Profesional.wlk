@@ -1,21 +1,7 @@
-/*
-Cada profesional tiene:
-    universidad donde estudia -> asignado a cada profesional.
-    honorarios -> 'cómo' depende del tipo
-    provincia donde puede trabajar -> 'cómo' depende del tipo
-
-*/
-
-/*
-Cada universidad tiene:
-    provincia donde se encuentra
-    honorarios que RECOMIENDA
-*/
-
 class VinculadoAUniversidad{
     const property universidad
-    method puedeTrabajarEn()
-    method honorarios()
+    method puedeTrabajarEn() = universidad.provincia()
+    method honorarios() = universidad.honorariosRecomendados()
     method cobrar(unMonto){
         universidad.recibirDonacion(unMonto/2)
     }

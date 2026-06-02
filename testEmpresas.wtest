@@ -20,7 +20,7 @@ describe "group of tests for pepita" {
         assert.equals([rocio], laSerenisima.profesionalesCaros())
     }
     test "Las universidades formadoras son uniRosario, uniCorrientes y uniHurlingham" {
-        assert.equals([uniRosario, uniCorrientes, uniHurlingham], laSerenisima.universidadesFormadoras())
+        assert.equals(#{uniRosario, uniCorrientes, uniHurlingham}, laSerenisima.universidadesFormadoras())
     }
     test "Juana es la más barata"{
         assert.equals(juana, laSerenisima.profesionalMasBarato())
